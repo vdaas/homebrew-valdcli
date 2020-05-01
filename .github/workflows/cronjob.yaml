@@ -1,7 +1,7 @@
 name: 'Update formula'
 on:
   schedule:
-    - cron: 0 0 * * *
+    - cron: 5 * * * *
 
 jobs:
   update:
@@ -17,6 +17,9 @@ jobs:
         run: |
           version=`curl -s https://api.github.com/repos/vdaas/vald-client-clj/releases/latest | jq -r '.tag_name'`
           ./update.sh ${version}
+
+          git config --global user.name "VDaaS org"
+          git config --global user.email "ci@vdaas.org"
 
           git add valdcli.rb
           git commit -m ":robot: Update valdcli ${version}"
