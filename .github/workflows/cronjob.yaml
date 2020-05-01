@@ -15,6 +15,8 @@ jobs:
       - name: update
         continue-on-error: true
         run: |
+          git checkout master
+
           version=`curl -s https://api.github.com/repos/vdaas/vald-client-clj/releases/latest | jq -r '.tag_name'`
           ./update.sh ${version}
 
