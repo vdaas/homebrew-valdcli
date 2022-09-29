@@ -15,7 +15,7 @@ jobs:
       - name: update
         continue-on-error: true
         run: |
-          git checkout master
+          git checkout main
 
           version=`curl -s https://api.github.com/repos/vdaas/vald-client-clj/releases/latest | jq -r '.tag_name'`
           ./update.sh ${version}
@@ -28,7 +28,7 @@ jobs:
 
           git remote set-url origin "https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
-          git push origin master
+          git push origin main
         env:
           GITHUB_USER: vdaas-ci
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
