@@ -1,9 +1,9 @@
 class Valdcli < Formula
   desc "A CLI client tool for Vald."
   homepage "https://clojars.org/vald-client-clj"
-  version "v1.7.0"
+  version "v1.7.1"
   url "https://github.com/vdaas/vald-client-clj/releases/download/#{version}/valdcli-macos.zip"
-  sha256 "26da902d1ff21700569fc549fc7d2ff6cb765667df0524dc4e0b55c0dddf5f07"
+  sha256 "2728e67038f4e16aa4c810392e8b1c9a447f659f483cfdd3661c1822988845a1"
 
   def install
     bin.install "valdcli" => "valdcli"
